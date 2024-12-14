@@ -1,5 +1,5 @@
 # WeatherApp
-Offers REST API to read current weather (`/api/weather`) and history (`/api/weather/history`) of previously requested records for mentioned location (city, postal code). It uses Swagger for API documentation and visualization (`http://localhost:8080`).
+Offers REST API to read current weather (`/api/weather`) and history (`/api/weather/history`) of previously requested records for mentioned location (**city, postal code**). It uses [Swagger](https://swagger.io/) for API documentation & testing (`http://localhost:8080`).
 
 ![image](https://github.com/user-attachments/assets/9e06151f-229c-4800-95d1-1c7b05b24457)
 
@@ -20,8 +20,8 @@ Offers REST API to read current weather (`/api/weather`) and history (`/api/weat
 
 ## Database Schema
 - `user` Table: Store user account information. User name is unique and activation field ("active") decides API access
-- `weather_request` Table: Stores current weather requests for user. <ins>OneToMany</ins> mapping with *user* Table
-- `weather` Table: Stores previously fetched weather records. <ins>OneToOne</ins> mapping with *weather_request* Table
+- `weather_request` Table: Stores current weather requests for user. <ins>OneToMany</ins> mapping with `user` Table
+- `weather` Table: Stores previously fetched weather records. <ins>OneToOne</ins> mapping with `weather_request` Table
 
 ## Setup
 - Sign-in and generate API Key from **WeatherAPI** https://www.weatherapi.com/api-explorer.aspx
@@ -39,14 +39,14 @@ spring.datasource.password=[YOUR_DB_PASSWORD]
 ```
 
 ## Unit Tests
-Validate functionalities using included Unit Tests
+Validate functionalities using included Unit Tests (`91% code coverage`)
 
 ![pras_weatherapp_tests_coverage](https://github.com/user-attachments/assets/fe366e48-8ebf-4553-b28f-dc7772c7ecb8)
 
 ## How to use?
-- Download `source code`, complete above mentioned Setup, Build and Start the application 
+- Download `source code`, complete Setup, Build and Start the application 
 - Assuming it is running on local machine, Go to http://localhost:8080
-- Swagger is configured at the `home page (/)` for API documentation and visualization
+- [Swagger](https://swagger.io/) is configured at the `home page (/)` for API documentation & testing
 - Get current weather `/api/weather?user=[USER_NAME]&location=[City Name or Postal Code]`
 - Get history by user or location or both `/api/weather/history?user=[USER_NAME]&location=[City Name or Postal Code]`
 - Use `active` field (*true / false*) in `user table` to grant API access to user. By default access is activated.
