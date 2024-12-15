@@ -60,3 +60,10 @@ Check and validate included Unit Tests
 3. Get current weather - /api/weather?user=[USER_NAME]&location=[City Name or Postal Code]
 4. Get history by user or location or both - /api/weather/history?user=[USER_NAME]&location=[City Name or Postal Code]
 5. Use "active" flag in "user" table to activate / deactivate user access. By default access is activated.
+
+## Docker Setup
+- Install Docker desktop (v 4.34.2)
+- Project includes- Dockerfile and docker-compose.yml
+- Open CMD, Go to project root and execute command (> docker-compose up)
+- During build process services may restart multiple times and it'll take a while to finish
+- Once complete, Go to- http://localhost:8080
