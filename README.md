@@ -38,6 +38,21 @@ spring.datasource.username=[YOUR_DB_USER]
 spring.datasource.password=[YOUR_DB_PASSWORD]
 ```
 
+## Setup using Docker
+- Install [Docker desktop](https://www.docker.com/products/docker-desktop/) (v 4.34.2)
+- Project includes docker configuratins- **Dockerfile** and **docker-compose.yml**
+- Sign-in and generate API Key from **WeatherAPI** https://www.weatherapi.com/api-explorer.aspx
+- Set API URL and Key in `application.properties`
+```
+com.pras.weather.api.url=https://api.weatherapi.com/v1/current.json
+com.pras.weather.api.key=[YOUR_API_KEY]
+```
+- Open CMD, Go to project root and execute command (`> docker-compose up`)
+- It'll take a while to finish, services may restart multiple times during initialization
+- Once complete, Go to- http://localhost:8080
+
+![docker_compose_containers](https://github.com/user-attachments/assets/642d7a5f-2deb-4a48-8856-24b6fca564ec)
+
 ## Unit Tests
 Validate functionalities using included Unit Tests (`91% code coverage`)
 
